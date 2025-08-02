@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy National Girlfriend Day</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Intro Flower Animation Screen -->
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-message">
+      <h1 class="intro-title">Happy National Girlfriend Day</h1>
+      <p class="flower-subtext">Here’s a flower for you 🌷</p>
+    </div>
+    <div class="bouquet-container" id="bouquetContainer">
+      <img src="4.png" alt="Tulip" class="tulip" />
+    </div>
+    <button id="nextBtn" class="hidden">Next</button>
+  </div>
+
+  <!-- Canvas for Falling Petals -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- Main Content -->
+  <div id="mainContent" class="hidden">
+    <div class="container">
+      <h1 class="title">Happy National Girlfriend Day 💖</h1>
+      <button id="letterBtn">Read Final Letter 💌</button>
+      <button id="galleryBtn">Our Memories 📸</button>
+    </div>
+  </div>
+
+<div class="container" id="ifYouReadThisSection">
+  <h2>If You Ever Read This...</h2>
+  <p>
+    I created this not to make you sad, but to honor everything we once shared. The laughs, the late night talks, the quiet moments they all mattered to me deeply.
+  </p>
+  <p>
+    I'm not reaching out to change the past. I just wanted to say thank you. And if life ever brings us back into each other’s orbit, even just as two people who once cared I’d be glad to say hello again.
+  </p>
+  <p>
+    Until then, take care. I truly wish you peace and happiness in all that you do.
+  </p>
+  <p>
+    I miss how you used to talk to me when you were feeling down or going through something.  
+    I miss holding you when you cried.  
+    I miss *us* the version of us that stood by each other no matter how big the problems were.
+  </p>
+  <p>
+    I waited for you for months, hoping you might come back because deep down, I felt that no one else could understand you the way I did.  
+    Before I even thought about being with someone new, I took my time and truly reflected. because I missed you so much.  
+    And honestly, a part of me is still waiting just in case you're out there missing me too.
+  </p>
+</div>
+
+
+  <!-- Final Letter Modal -->
+  <div id="letterModal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <span id="closeLetterBtn" class="close">&times;</span>
+      <h2>My Final Letter</h2>
+      <p class="letter-text">
+            Hi Jemm,  
+<br><br>
+I know this may come as a surprise. I actually began creating this website for you on June 2. It’s been three months now. I made it as a way to express what words often failed to how deeply I truly loved you.
+<br><br>
+I worked on it little by little, hoping to finish it by August 1. Life got overwhelming, especially with my capstone project, but I held onto this idea in the quiet moments, simply because you were that important to me.
+<br><br>
+Yes, I’m with someone new now, and I do care for her. But I started this when I was still quietly holding on to the hope of us. We once promised each other, "If you ever can’t handle things, I’ll always be here for you." That still means something to me. If ever you need someone, even just to talk to, I’m here.
+<br><br>
+I’ve seen how strong you’ve become, even without me by your side. And that strength truly deserves to be acknowledged. I admire you for holding it all together.
+<br><br>
+When you left, I felt lost. I went through days that felt heavy with sadness and silence, trying to make sense of what happened. In that stillness, one truth stayed clear. I loved you deeply.
+<br><br>
+Time has passed, and things are different now. But even so, I want to say thank you. Thank you for the memories we created, for the love we once shared, and for being a part of my life that helped shape who I am today.
+<br><br>
+Looking back, I know I made mistakes. I let my emotions get the better of me, and I hurt you in the process. I’ve had time to reflect, and I want to offer a heartfelt apology. Not just for what I did, but for what you felt because of me.
+<br><br>
+If someone else now brings joy to your life, then I am genuinely happy for you, Jemm. I hope he treats you with the tenderness and care you deserve. That is all I ever wanted for you, even if it wasn’t with me.
+<br><br>
+This will be the last time I say sorry. Not because I don’t feel it, but because I’ve finally found peace with everything that happened.
+<br><br>
+I spent countless late nights working on this, hoping you’d see it on National Girlfriend Day. You deserved to be celebrated. Not just as someone’s girlfriend, but as the strong, beautiful person you’ve always been.
+<br><br>
+What we had was rare. And while it’s now part of the past, I carry its lessons with me. I don’t think I could ever create something like this for anyone else, because this came from a version of me who loved you sincerely and fully.
+<br><br>
+I hope that one day, in your own quiet way, you’ll understand what I’ve tried to share through this.
+<br><br>
+Thank you, Jemm. For everything.
+<br><br>
+--Mark Brian
+</p>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <span class="close" id="closeModalBtn">&times;</span>
+      <h2>Our Memories</h2>
+      <div class="albums">
+        <div class="album">
+          <h3>March 2024</h3>
+          <div class="album-gallery">
+            <img src="march/march1.jpg" alt="March Memory" />
+            <img src="march/march2.jpg" alt="March Memory" />
+            <img src="march/march3.jpg" alt="March Memory" />
+            <img src="march/march4.jpg" alt="March Memory" />
+            <img src="march/march5.jpg" alt="March Memory" />
+            <img src="march/march6.jpg" alt="March Memory" />
+            <img src="march/march7.jpg" alt="March Memory" />
+            <video src="march/march8.mp4" controls></video>
+          </div>
+        </div>
+
+        <div class="album">
+          <h3>April 2024</h3>
+          <div class="album-gallery">
+            <img src="april/april1.jpg" alt="April Memory" />
+            <img src="april/april2.jpg" alt="April Memory" />
+            <img src="april/april3.jpg" alt="April Memory" />
+            <img src="april/april4.jpg" alt="April Memory" />
+            <img src="april/april5.jpg" alt="April Memory" />
+            <img src="april/april6.jpg" alt="April Memory" />
+            <img src="april/april7.jpg" alt="April Memory" />
+            <img src="april/april8.jpg" alt="April Memory" />
+            <img src="april/april9.jpg" alt="April Memory" />
+            <img src="april/april10.jpg" alt="April Memory" />
+            <img src="april/april11.jpg" alt="April Memory" />
+            <img src="april/april12.jpg" alt="April Memory" />
+            <img src="april/april13.jpg" alt="April Memory" />
+            <img src="april/april14.jpg" alt="April Memory" />
+          </div>
+        </div>
+
+        <div class="album">
+          <h3>May 2024</h3>
+          <div class="album-gallery">
+            <img src="may/may1.jpg" alt="May Memory" />
+            <img src="may/may2.jpg" alt="May Memory" />
+            <img src="may/may3.jpg" alt="May Memory" />
+            <img src="may/may4.jpg" alt="May Memory" />
+            <img src="may/may5.jpg" alt="May Memory" />
+            <img src="may/may6.jpg" alt="May Memory" />
+            <img src="may/may7.jpg" alt="May Memory" />
+            <img src="may/may8.jpg" alt="May Memory" />
+            <img src="may/may9.jpg" alt="May Memory" />
+            <img src="may/may10.jpg" alt="May Memory" />
+            <img src="may/may11.jpg" alt="May Memory" />
+          </div>
+        </div>
+          <div class="album">
+          <h3>July 2024</h3>
+          <div class="album-gallery">
+            <img src="july/july1.jpg" alt="July Memory" />
+            <img src="july/july2.jpg" alt="July Memory" />
+            <img src="july/july3.jpg" alt="July Memory" />
+          </div>
+        </div>
+        <div class="album">
+          <h3>August 2024</h3>
+          <div class="album-gallery">
+            <img src="august/august1.jpg" alt="August Memory" />
+            <img src="august/august2.jpg" alt="August Memory" />
+            <img src="august/august3.jpg" alt="August Memory" />
+            <img src="august/august4.jpg" alt="August Memory" />
+            <img src="august/august5.jpg" alt="August Memory" />
+            <img src="august/august6.jpg" alt="August Memory" />
+            <img src="august/august7.jpg" alt="August Memory" />
+            <img src="august/august8.jpg" alt="August Memory" />
+            <img src="august/august9.jpg" alt="August Memory" />
+            <video src="august/august10.mp4" controls></video>
+            <img src="august/august11.jpg" alt="August Memory" />
+            <img src="august/august12.jpg" alt="August Memory" />
+            <img src="august/august13.jpg" alt="August Memory" />
+            <img src="august/august14.jpg" alt="August Memory" />
+            <img src="august/august15.jpg" alt="August Memory" />
+            <img src="august/august16.jpg" alt="August Memory" />
+            <img src="august/august17.jpg" alt="August Memory" />
+            <img src="august/august18.jpg" alt="August Memory" />
+            <img src="august/august19.jpg" alt="August Memory" />
+            <video src="august/august20.mp4" controls></video>
+            <img src="august/august21.jpg" alt="August Memory" />
+          </div>
+        </div>
+        <div class="album">
+          <h3>September 2024</h3>
+          <div class="album-gallery">
+            <img src="september/september1.jpg" alt="September Memory" />
+            <img src="september/september2.jpg" alt="September Memory" />
+            <img src="september/september3.jpg" alt="September Memory" />
+            <img src="september/september4.jpg" alt="September Memory" />
+            <video src="september/september5.mp4" controls></video>
+            <img src="september/september6.jpg" alt="September Memory" />
+            <img src="september/september7.jpg" alt="September Memory" />
+            <img src="september/september8.jpg" alt="September Memory" />
+            <img src="september/september9.jpg" alt="September Memory" />
+            <img src="september/september10.jpg" alt="September Memory" />
+            <img src="september/september11.jpg" alt="September Memory" />
+            <video src="september/september12.mp4" controls></video>
+            <img src="september/september13.jpg" alt="September Memory" />
+            <img src="september/september14.jpg" alt="September Memory" />
+            <img src="september/september15.jpg" alt="September Memory" />
+          </div>
+        </div>
+        <div class="album">
+          <h3>October 2024</h3>
+          <div class="album-gallery">
+            <img src="october/oct1.jpg" alt="October Memory" />
+            <img src="october/oct2.jpg" alt="October Memory" />
+            <img src="october/oct3.jpg" alt="October Memory" />
+            <img src="october/oct4.jpg" alt="October Memory" />
+            <img src="october/oct5.jpg" alt="October Memory" />
+            <img src="october/oct6.jpg" alt="October Memory" />
+            <img src="october/oct7.jpg" alt="October Memory" />
+            <img src="october/oct8.jpg" alt="October Memory" />
+            <img src="october/oct9.jpg" alt="October Memory" />
+            <img src="october/oct10.jpg" alt="October Memory" />
+            <img src="october/oct11.jpg" alt="October Memory" />
+            <img src="october/oct12.jpg" alt="October Memory" />
+            <img src="october/oct13.jpg" alt="October Memory" />
+            <img src="october/oct14.jpg" alt="October Memory" />
+            <img src="october/oct15.jpg" alt="October Memory" />
+            <img src="october/oct16.jpg" alt="October Memory" />
+            <img src="october/oct17.jpg" alt="October Memory" />
+            <img src="october/oct18.jpg" alt="October Memory" />
+            <img src="october/oct19.jpg" alt="October Memory" />
+          </div>
+        </div>
+        <div class="album">
+          <h3>November 2024</h3>
+          <div class="album-gallery">
+            <img src="november/nov1.jpg" alt="November Memory" />
+            <img src="november/nov2.jpg" alt="November Memory" />
+            <img src="november/nov3.jpg" alt="November Memory" />
+            <img src="november/nov4.jpg" alt="November Memory" />
+            <img src="november/nov5.jpg" alt="November Memory" />
+            <img src="november/nov6.jpg" alt="November Memory" />
+            <img src="november/nov7.jpg" alt="November Memory" />
+            <img src="november/nov8.jpg" alt="November Memory" />
+            <img src="november/nov9.jpg" alt="November Memory" />
+            <img src="november/nov10.jpg" alt="November Memory" />
+            <img src="november/nov11.jpg" alt="November Memory" />
+            <img src="november/nov12.jpg" alt="November Memory" />
+            <video src="november/nov13.mp4" controls></video>
+            <img src="november/nov14.jpg" alt="November Memory" />
+            <img src="november/nov15.jpg" alt="November Memory" />
+            <img src="november/nov16.jpg" alt="November Memory" />
+            <img src="november/nov17.jpg" alt="November Memory" />
+          </div>
+        </div>
+         <div class="album">
+          <h3>December 2024</h3>
+          <div class="album-gallery">
+            <img src="december/dec1.jpg" alt="December Memory" />
+            <img src="december/dec2.jpg" alt="December Memory" />
+            <img src="december/dec3.jpg" alt="December Memory" />
+            <img src="december/dec4.jpg" alt="December Memory" />
+            <img src="december/dec5.jpg" alt="December Memory" />
+            <img src="december/dec6.jpg" alt="December Memory" />
+            <img src="december/dec7.jpg" alt="December Memory" />
+            <img src="december/dec8.jpg" alt="December Memory" />
+            <img src="december/dec9.jpg" alt="December Memory" />
+          </div>
+        </div>
+        <div class="album">
+          <h3>February 2025</h3>
+          <div class="album-gallery">
+            <img src="february/feb1.jpg" alt="February Memory" />
+            <img src="february/feb2.jpg" alt="February Memory" />
+            <img src="february/feb3.jpg" alt="February Memory" />
+            <img src="february/feb4.jpg" alt="February Memory" />
+            <img src="february/feb5.jpg" alt="February Memory" />
+            <img src="february/feb6.jpg" alt="February Memory" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zoom Modal -->
+  <div id="zoomModal" class="zoom-modal hidden">
+    <div class="zoom-overlay" id="zoomOverlay"></div>
+    <div class="zoom-box">
+      <span id="zoomClose" class="close">&times;</span>
+      <span id="prevZoom" class="zoom-arrow">&#10094;</span>
+      <div id="zoomContent"></div>
+      <span id="nextZoom" class="zoom-arrow">&#10095;</span>
+    </div>
+  </div>
+
+
+
+  <!-- Scripts -->
+  <script src="petals.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

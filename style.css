@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('flowers-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ----------------------------- */
+/* INTRO SCREEN */
+/* ----------------------------- */
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #fffafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.intro-message {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.intro-title {
+  font-size: 2.2rem;
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 2s ease-out;
+}
+
+.flower-subtext {
+  font-size: 1.4rem;
+  color: #e91e63;
+  animation: fadeInUp 2.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bouquet-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 1rem;
+}
+
+.tulip {
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: tulipFadeIn 0.8s ease forwards;
+}
+
+@keyframes tulipFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#nextBtn {
+  padding: 0.8rem 2rem;
+  background: #e91e63;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#nextBtn:hover {
+  background: #c2185b;
+}
+
+#mainContent.hidden {
+  display: none;
+}
+
+#petalCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ------------------------ */
+/* Main Content Container  */
+/* ------------------------ */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 15vh;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px #e91e63;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  margin: 1rem;
+  border: none;
+  background: #ff4081;
+  color: white;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+button:hover {
+  background: #e91e63;
+}
+
+/* ------------------ */
+/* Modal Styling      */
+/* ------------------ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 90%;
+  z-index: 200;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #e91e63;
+}
+
+.album h3 {
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+}
+
+.album-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.album-gallery img,
+.album-gallery video {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.album-gallery img:hover,
+.album-gallery video:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------------------- */
+/* Zoom Modal for Media         */
+/* ---------------------------- */
+#zoomModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: zoom-out;
+}
+
+#zoomModal img,
+#zoomModal video {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #e91e63;
+  object-fit: contain;
+}
+
+#zoomContent {
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#zoomModal #prevArrow,
+#zoomModal #nextArrow {
+  user-select: none;
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border: 5px solid #ff69b4;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+}
+
+.image-modal .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  background: rgba(255, 105, 180, 0.4);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-arrow.left {
+  left: 20px;
+}
+
+.nav-arrow.right {
+  right: 20px;
+}
+#ifYouReadThisSection {
+  background: rgba(255, 192, 203, 0.3); /* soft pink, more visible */
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 700px;
+  border-left: 4px solid #ff85a2;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 182, 193, 0.35);
+  backdrop-filter: blur(6px); /* slight glass effect */
+}
+
+#ifYouReadThisSection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #ff8ca3;
+}
+
+#ifYouReadThisSection p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #d75f7a;
+}
